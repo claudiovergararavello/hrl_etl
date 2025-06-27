@@ -1,0 +1,15 @@
+{
+  "name": "HRL ETL",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--network=host"],
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
+}
