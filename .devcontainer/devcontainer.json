@@ -5,7 +5,8 @@
   },
   "mounts": [],
   "remoteEnv": {
-    "WAYLAND_DISPLAY": ""
+    "WAYLAND_DISPLAY": "",
+    "AIRFLOW__WEBSERVER__AUTHENTICATE": "False"
   },
   "runArgs": ["--network=host", "--mount", "type=tmpfs,target=/tmp"],
   "customizations": {

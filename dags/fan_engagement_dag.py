@@ -19,14 +19,16 @@ def notify_kafka():
     producer.send("etl_notifications", message)
     producer.flush()
 
-with DAG("fan_engagement_etl_dag",
+with DAG(
+        "fan_engagement_etl_dag",
          start_date=datetime(2025, 6, 1),
          schedule_interval="@daily",
-         catchup=False) as dag:
+         catchup=False
+        ) as dag:
 
     run_beam = BashOperator(
         task_id="run_beam_pipeline",
-        bash_command="python /app/beam_pipeline/process_json_to_avro.py /app/input/example.jsonl /app/output/ /app/beam_pipeline/schema.avsc"
+        bash_command="python /app/beam_pipeline/process_json_to_avro.py /app/input/fan_engagement.jsonl /app/output/ /app/beam_pipeline/schema.avsc"
     )
 
     notify = PythonOperator(
