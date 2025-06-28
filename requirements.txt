@@ -1,0 +1,6 @@
+apache-beam==2.53.0
+opentelemetry-exporter-otlp-proto-grpc==1.21.0
+protobuf==4.25.3 
+apache-airflow==2.9.1
+apache-airflow-providers-apache-kafka
+kafka-python==2.0.2
