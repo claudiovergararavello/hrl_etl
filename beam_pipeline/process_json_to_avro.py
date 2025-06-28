@@ -18,9 +18,9 @@ def run(input_path, output_path, schema_path):
 
     with beam.Pipeline(options=options) as p:
         (p
-         | "Read JSON Lines" >> beam.io.ReadFromText(input_path)
-         | "Parse JSON and Add Timestamp_unix" >> beam.Map(parse_json)
-         | "Write to Avro" >> beam.io.WriteToAvro(
+         | "Leer Data de JSONL" >> beam.io.ReadFromText(input_path)
+         | "Parseo del JSON y Agregación de campo Timestamp_unix" >> beam.Map(parse_json)
+         | "Escritura en AVRO" >> beam.io.WriteToAvro(
                 output_path,
                 schema=schema,
                 file_name_suffix=".avro"
