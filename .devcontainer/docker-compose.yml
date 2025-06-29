@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   hrl-airflow:
-    image: apache/airflow:2.9.1
+    image: apache/airflow:2.9.1-python3.10
     user: root
     environment:
       - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
@@ -11,6 +11,8 @@ services:
     volumes:
       - ..:/workspace
       - ./webserver_config.py:/opt/airflow/webserver_config.py
+      - ../dags:/opt/airflow/dags
+      - ../requirements.txt:/requirements.txt
     working_dir: /workspace
     command: ["bash", "/workspace/install.sh"]
     ports:

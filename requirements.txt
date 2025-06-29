@@ -1,6 +1,7 @@
-apache-beam==2.53.0
+apache-beam==2.58.0
+fastavro>=1.8.0
 opentelemetry-exporter-otlp-proto-grpc==1.21.0
 protobuf==4.25.3 
 apache-airflow==2.9.1
-apache-airflow-providers-apache-kafka
+apache-airflow-providers-apache-kafka==1.4.1
 kafka-python==2.0.2
