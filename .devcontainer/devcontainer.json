@@ -1,21 +1,19 @@
 {
   "name": "HRL ETL",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "hrl-airflow",
+  "workspaceFolder": "/workspace",
+  "context": "..",
   "mounts": [],
   "remoteEnv": {
-    "WAYLAND_DISPLAY": "",
-    "AIRFLOW__WEBSERVER__AUTHENTICATE": "False"
+    "WAYLAND_DISPLAY": ""
   },
-  "runArgs": ["--network=host", "--mount", "type=tmpfs,target=/tmp"],
   "customizations": {
     "vscode": {
       "extensions": ["ms-python.python"]
     },
     "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
+      "terminal.integrated.defaultProfile.linux": "bash"
     }
-  },
-  "postCreateCommand": "pip install -r requirements.txt"
+  }
 }
